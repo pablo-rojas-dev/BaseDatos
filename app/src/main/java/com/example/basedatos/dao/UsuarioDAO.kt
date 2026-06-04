@@ -10,4 +10,8 @@ interface UsuarioDao {
     @Query("SELECT * FROM usuarios_table")
             suspend fun obtenerUsuarios():
             List<Usuario>
+
+    suspend fun buscarPorNombre(nombre: String): Any
+    //@Query("SELECT * FROM usuarios_table WHERE nombre = nombre")
+
 }
