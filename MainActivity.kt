@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnMostrarUsuarios.setOnClickListener {
-            viewModel.cargarUsuarios()
+            // viewModel.cargarUsuarios()
+            viewModel.buscarUsuario(binding.etNombreFiltro.text.toString())
         }
 
         lifecycleScope.launch {

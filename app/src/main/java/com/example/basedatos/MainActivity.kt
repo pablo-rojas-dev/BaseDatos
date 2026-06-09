@@ -37,13 +37,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnRegistrar.setOnClickListener {
             val usuario = Usuario(0,binding.etUsuarioNombre.text.toString(),
-                Integer.getInteger(binding.etUsuarioEdad.text.toString())!!)
+                binding.etUsuarioEdad.text.toString().toInt())
 
             viewModel.agregarUsuarios(usuario)
         }
 
         binding.btnMostrarUsuarios.setOnClickListener {
-            viewModel.cargarUsuarios()
+            // viewModel.cargarUsuarios()
+            viewModel.buscarUsuario(binding.etNombreFiltro.text.toString())
         }
 
         lifecycleScope.launch {
